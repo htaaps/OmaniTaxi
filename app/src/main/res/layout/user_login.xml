@@ -1,0 +1,154 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#e8e8e7"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="#3399FF"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+
+            <ImageView android:layout_width="40dp"
+                android:layout_height="40dp"
+
+                android:layout_marginLeft="10dp"/>
+
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="        User Login"
+                android:textColor="#000"
+                android:layout_marginLeft="25dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+
+                android:layout_gravity="center"/>
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@drawable/greybackground"
+            android:weightSum="1">
+
+            <ImageView android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/login"
+                android:layout_gravity="center_horizontal"/>
+
+            <EditText
+                android:id="@+id/l_edt_user"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:hint="  User Name"
+                android:drawableLeft="@drawable/user"
+                android:background="#f3f3f3"
+                android:textColor="#000"
+                android:paddingLeft="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0.15" />
+
+            <EditText
+                android:id="@+id/l_edt_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:hint=" password"
+                android:drawableLeft="@drawable/pwd"
+                android:background="#f3f3f3"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:layout_marginTop="15dp"/>
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/reg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#000000"
+                    android:text=" Sing Up "
+                    android:drawableLeft="@drawable/add_user"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#000000"
+                    android:text=" | "
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#000000"
+                    android:drawableLeft="@drawable/fpassword"
+                    android:text="  Forgot Password? "
+                    android:textStyle="bold"
+
+                    />
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/l_btn_log"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Login"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:background="#3399FF"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

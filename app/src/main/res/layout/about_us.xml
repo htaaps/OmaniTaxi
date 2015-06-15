@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="#FFBB33"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#3399FF"
+        android:orientation="horizontal"
+
+        android:layout_alignParentTop="true">
+
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="           About Us"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:layout_marginLeft="25dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            android:layout_gravity="center_horizontal|center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/greybackground"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oman Taxi App
+"
+            android:textColor="#FF4444"
+            android:textSize="30sp"/>
+
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This Project Done by:
+"
+        android:textColor="#000"
+        android:textSize="30sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Suaad AL-Rashdi
+  Balqees  AL-Rashdi. "
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Students in :
+  Ibra College Of Technology"
+            android:textColor="#F00"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text=" Database Students"
+            android:textColor="#9933CC"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+</LinearLayout>

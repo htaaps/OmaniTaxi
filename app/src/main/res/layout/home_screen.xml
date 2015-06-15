@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="#8E8E93"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#3399FF"
+        android:orientation="horizontal">
+
+        <ImageView android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_launcher"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="25dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <TableLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/greybackground"
+        android:weightSum="1">
+
+
+        <ImageButton
+        android:id="@+id/hs_btn_booking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="2dp"
+        android:src="@drawable/booking"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageButton
+            android:id="@+id/hs_btn_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/about"/>
+        <ImageButton
+        android:id="@+id/hs_btn_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+        android:src="@drawable/contact" />
+
+
+
+</TableLayout>
+</TableLayout>

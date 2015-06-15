@@ -1,0 +1,168 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#faa519"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="#3399FF"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signupicon"
+                android:layout_marginLeft="10dp"/>
+
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                android:textColor="#000"
+                android:layout_marginLeft="25dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+
+                android:layout_gravity="center_horizontal|center_vertical"/>
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:gravity="right"
+                android:layout_margin="20dp"
+                android:orientation="horizontal" >
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical"
+            android:background="@drawable/greybackground"
+            >
+
+            <EditText
+                android:id="@+id/su_et_username"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:hint="User Name"
+                android:background="#f3f3f3"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/su_et_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:background="#f3f3f3"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/su_et_fname"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:hint="First Name"
+                android:inputType="text"
+                android:background="#f3f3f3"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/su_et_lname"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:background="#f3f3f3"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="15dp"/>
+            <TextView
+                android:id="@+id/su_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:text="city" />
+
+            <Spinner
+                android:id="@+id/sp_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+            </Spinner>
+
+            <TextView
+                android:id="@+id/su_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:text="Gender"
+                android:layout_gravity="left|top"
+                />
+
+            <Spinner
+                android:id="@+id/sp_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top">
+            </Spinner>
+            <EditText
+                android:id="@+id/su_et_email"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:background="#f3f3f3"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/su_et_mobile"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:hint="mobile"
+                android:inputType="number"
+                android:background="#f3f3f3"
+                android:paddingLeft="3dp"
+                android:layout_marginTop="15dp"/>
+
+            <Button
+                android:id="@+id/su_btn_submit"
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:text="submit"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:background="#3399FF"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
