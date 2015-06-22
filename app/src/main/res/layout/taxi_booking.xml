@@ -38,13 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:text="Select"
-        android:id="@+id/tb_btn_Select" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
         android:text="Book Now"
-        android:id="@+id/tb_btn_Booking" />
+        android:id="@+id/tb_btn_booking" />
 
 </LinearLayout>

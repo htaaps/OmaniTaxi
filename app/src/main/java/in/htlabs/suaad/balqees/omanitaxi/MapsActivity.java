@@ -30,8 +30,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private List<City> cityList = new ArrayList<City>();
     private Marker mCity[];
-    private static final double SLAT=23.6000;
-    private static final double SLON=58.5500;
+    public static final double SLAT=23.6000;
+    public static final double SLON=58.5500;
     private Intent i;
     private static int selection=0;
 
