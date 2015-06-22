@@ -26,7 +26,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".HomeScreen"
+            android:name=".TaxiBooking"
             android:label="@string/title_activity_maps" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,6 +68,14 @@
         </activity>
         <activity
             android:name="MapsActivity"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name="AvailableTaxi"
+            android:label="@string/title_activity_maps" >
+        </activity>
+        <activity
+            android:name="HomeScreen"
             android:label="@string/title_activity_maps" >
         </activity>
     </application>

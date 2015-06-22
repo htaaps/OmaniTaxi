@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TableLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:background="@drawable/greybackground"
+        android:weightSum="1">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="29sp"
+                android:text="Booking Details"
+                android:textColor="#FF4444"
+                android:layout_marginTop="1dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:hint="From"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/cb_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginBottom="10dp"
+                android:hint="To"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/cb_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:inputType="date"
+                android:text="Date"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+            <DatePicker
+                android:id="@+id/cb_date"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp">
+            </DatePicker>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="Time"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+            <TimePicker
+                android:id="@+id/cb_time"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp">
+            </TimePicker>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:hint="Total Price:"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/cb_tprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:hint="Total Distance:"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/cb_tdistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <Button
+            android:id="@+id/cb_btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:layout_marginTop="20dp"
+            android:background="#3399FF"
+            android:textColor="#fff"
+            android:textStyle="bold|italic"
+            android:textSize="28sp"
+            android:layout_gravity="right|center_horizontal" />
+    </TableLayout>
+
+</LinearLayout>

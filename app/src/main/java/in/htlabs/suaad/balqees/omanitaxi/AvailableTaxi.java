@@ -3,10 +3,9 @@ package in.htlabs.suaad.balqees.omanitaxi;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,29 +24,25 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarkerClickListener{
-
+/**
+ * Created by admin on 6/18/2015.
+ */
+public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarkerClickListener {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
-    private List<City> cityList = new ArrayList<City>();
-    private Marker mCity[];
+    private List<Taxi> taxiList = new ArrayList<Taxi>();
     private static final double SLAT=23.6000;
     private static final double SLON=58.5500;
+    private Marker mIbra[];
     private Intent i;
     private static int selection=0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.available_taxi);
         new GetAllLocations().execute();
 
-    }
 
-    @Override
-    protected void onPause() {
-        super.onResume();
-        mMap=null;
     }
 
     private void setUpMapIfNeeded() {
@@ -62,54 +57,95 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
             }
         }
     }
-
     private void setUpMap() {
         Double lat,lon;
-        mCity=new Marker[cityList.size()];
-
-        mMap.setOnMarkerClickListener(this);
+        mIbra=new Marker[taxiList.size()];
 
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
         mMap.setMyLocationEnabled(true);
 
+        mMap.setOnMarkerClickListener(this);
+
         LatLng oman = new LatLng(SLAT,SLON);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(oman, 8));
-
-        for(int j=0;j<cityList.size();j++){
-            lat=Double.parseDouble(cityList.get(j).getCLat());
-            lon=Double.parseDouble(cityList.get(j).getCLon());
-            mCity[j]=mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(cityList.get(j).getCName()));
+        for(int j=0;j<taxiList.size();j++){
+            lat=Double.parseDouble(taxiList.get(j).getTLat());
+            lon=Double.parseDouble(taxiList.get(j).getTLon());
+            mIbra[j]=mMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(taxiList.get(j).getTdName())
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.car)));
         }
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mMap=null;
     }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        if (marker.equals(mCity[0])){
+
+        if (marker.equals(mIbra[0])){
             selection=1;
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[1])){
+        else if (marker.equals(mIbra[1])){
             selection=2;
-            i=new Intent(MapsActivity.this, AvailableTaxi.class);
-                startActivity(i);
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[2])){
+        else if (marker.equals(mIbra[2])){
             selection=3;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[3])){
+        else if (marker.equals(mIbra[3])){
             selection=4;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[4])){
+        else if (marker.equals(mIbra[4])){
             selection=5;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[5])){
+        else if (marker.equals(mIbra[5])){
             selection=6;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[6])){
+        else if (marker.equals(mIbra[6])){
             selection=7;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
-        else if(marker.equals(mCity[7])){
+        else if (marker.equals(mIbra[7])){
             selection=8;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
+        }
+        else if (marker.equals(mIbra[8])){
+            selection=9;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
+        }
+        else if (marker.equals(mIbra[9])){
+            selection=10;
+
+            i=new Intent(AvailableTaxi.this, TaxiBooking.class);
+            startActivity(i);
         }
         else{
             selection=0;
@@ -120,7 +156,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     class GetAllLocations extends AsyncTask<String, String, String> {
 
         // Movies json url
-        private static final String LOC_URL = "http://www.htlabs.in/student/taxibooking/citydetails.php";
+        private static final String LOC_URL = "http://www.htlabs.in/student/taxibooking/alltaxi.php";
 
         private ProgressDialog pDialog;
 
@@ -140,8 +176,8 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(MapsActivity.this);
-            pDialog.setMessage("Getting all the cities...");
+            pDialog = new ProgressDialog(AvailableTaxi.this);
+            pDialog.setMessage("Getting all the taxies...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -171,13 +207,15 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                     Log.d("Login Successful!", json.toString());
                     for(int j=0;j< posts.length();j++){
                         JSONObject obj=posts.getJSONObject(j);
-                        City c=new City();
-                        c.setCId(obj.getString("city_id"));
-                        c.setCName(obj.getString("city_name"));
-                        c.setCLat(obj.getString("city_lat"));
-                        c.setCLon(obj.getString("city_lon"));
+                        Taxi c = new Taxi();
+                        c.setTId(obj.getString("taxi_id"));
+                        c.setTdName(obj.getString("driver_name"));
+                        c.setTtype(obj.getString("type"));
+                        c.setTPrice(obj.getString("price_per_km"));
+                        c.setTLat(obj.getString("lat"));
+                        c.setTLon(obj.getString("lon"));
 
-                        cityList.add(c);
+                        taxiList.add(c);
                     }
 
                     return json.getString(TAG_MESSAGE);
@@ -200,10 +238,13 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
             // dismiss the dialog once product deleted
             pDialog.dismiss();
             if (file_url != null) {
-                Toast.makeText(MapsActivity.this, file_url, Toast.LENGTH_LONG).show();
+                Toast.makeText(AvailableTaxi.this, file_url, Toast.LENGTH_LONG).show();
             }
             setUpMapIfNeeded();
         }
 
     }
+
+
+
 }
