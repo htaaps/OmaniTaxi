@@ -35,6 +35,8 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
     private Marker mIbra[];
     private Intent i;
     private static int selection=0;
+    public static String taxiId=null;
+    public static String pricePerKm=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,66 +91,66 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
     public boolean onMarkerClick(Marker marker) {
 
         if (marker.equals(mIbra[0])){
-            selection=1;
+            this.taxiId=taxiList.get(0).getTId();
+            this.pricePerKm=taxiList.get(0).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[1])){
-            selection=2;
-
+            this.taxiId=taxiList.get(1).getTId();
+            this.pricePerKm=taxiList.get(1).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[2])){
-            selection=3;
-
+            this.taxiId=taxiList.get(2).getTId();
+            this.pricePerKm=taxiList.get(2).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[3])){
-            selection=4;
-
+            this.taxiId=taxiList.get(3).getTId();
+            this.pricePerKm=taxiList.get(3).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[4])){
-            selection=5;
-
+            this.taxiId=taxiList.get(4).getTId();
+            this.pricePerKm=taxiList.get(4).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[5])){
-            selection=6;
-
+            this.taxiId=taxiList.get(5).getTId();
+            this.pricePerKm=taxiList.get(5).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[6])){
-            selection=7;
-
+            this.taxiId=taxiList.get(6).getTId();
+            this.pricePerKm=taxiList.get(6).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[7])){
-            selection=8;
-
+            this.taxiId=taxiList.get(7).getTId();
+            this.pricePerKm=taxiList.get(7).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[8])){
-            selection=9;
-
+            this.taxiId=taxiList.get(8).getTId();
+            this.pricePerKm=taxiList.get(8).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[9])){
-            selection=10;
-
+            this.taxiId=taxiList.get(9).getTId();
+            this.pricePerKm=taxiList.get(9).getTPrice();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else{
-            selection=0;
         }
         return false;
     }

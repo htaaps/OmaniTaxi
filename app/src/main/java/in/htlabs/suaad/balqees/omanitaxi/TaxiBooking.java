@@ -521,8 +521,8 @@ public class TaxiBooking extends FragmentActivity implements AdapterView.OnItemC
             Toast.makeText(TaxiBooking.this,DirectionsJSONParser.dis+" "+DirectionsJSONParser.time,Toast.LENGTH_LONG).show();
             tb_tv_distance.setText(DirectionsJSONParser.dis);
             Float distance = Float.parseFloat(DirectionsJSONParser.dis.substring(0, DirectionsJSONParser.dis.indexOf("km")));
-
-            tb_tv_price.setText(distance.toString());
+            Float cost=distance*Float.parseFloat(AvailableTaxi.pricePerKm);
+            tb_tv_price.setText(cost.toString());
         }
     }
 }

@@ -30,11 +30,14 @@ public class UserLogin extends Activity implements View.OnClickListener {
     TextView forgot_password,reg;
     Intent i;
     private ProgressDialog pDialog;
+    public static String user=null;
+
      // JSON parser class
     JSONParser jparsor=new JSONParser();
     private static final String LOGIN_URL = "http://www.htlabs.in/student/taxibooking/login.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
+    private static final String TAG_USER_ID = "user_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +100,7 @@ public class UserLogin extends Activity implements View.OnClickListener {
                 // checking log for json response
                 Log.d("Login attempt", json.toString());
                 success = json.getInt(TAG_SUCCESS);
+                UserLogin.user=json.getString(TAG_USER_ID);
                 if (success == 1) {
                     Log.d("Successfully Login!", json.toString());
                     Intent ii = new Intent(UserLogin.this,Booking.class);
