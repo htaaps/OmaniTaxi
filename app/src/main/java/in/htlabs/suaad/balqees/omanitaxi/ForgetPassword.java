@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Created by admin on 5/22/2015.
  */
-public class ForgetPassword extends Activity implements View.OnClickListener,View.OnTouchListener {
+public class ForgetPassword extends Activity implements View.OnTouchListener {
     EditText fg_et_email, fg_et_newpassword, fg_et_confirmpassword;
     Button fg_btn_change;
     boolean validate = false;
@@ -43,22 +43,12 @@ public class ForgetPassword extends Activity implements View.OnClickListener,Vie
         fg_et_newpassword = (EditText) findViewById(R.id.fg_et_newpassword);
         fg_et_confirmpassword = (EditText) findViewById(R.id.fg_et_confirmpassword);
         fg_btn_change = (Button) findViewById(R.id.fg_btn_change);
+        fg_btn_change.setOnTouchListener(this);
 
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fg_btn_change:
-
-
-        }
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent me) {
-
         switch (v.getId()) {
             case R.id.fg_btn_change:
                 if (me.getAction() == MotionEvent.ACTION_DOWN) {
@@ -146,7 +136,6 @@ public class ForgetPassword extends Activity implements View.OnClickListener,Vie
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
                 params.add(new BasicNameValuePair("email", email));
                 params.add(new BasicNameValuePair("password", password));
-                params.add(new BasicNameValuePair("Cpassword", cpassword));
                 Log.d("request!", "starting");
                 JSONObject json = jparsor.makeHttpRequest(LOGIN_URL, "POST", params);
 

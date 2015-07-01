@@ -1,11 +1,22 @@
 package in.htlabs.suaad.balqees.omanitaxi;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -18,76 +29,110 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import in.htlabs.suaad.balqees.omanitaxi.adapter.CustomListAdapter;
+import in.htlabs.suaad.balqees.omanitaxi.app.AppController;
+import in.htlabs.suaad.balqees.omanitaxi.model.VDetails;
 
 /**
  * Created by admin on 5/26/2015.
  */
 public class ViewBooking extends Activity implements View.OnClickListener {
+    // Log tag
+    private static final String TAG = ViewBooking.class.getSimpleName();
 
-    TextView vb_bookingid, vb_from, vb_to, vb_date, vb_time, vb_total;
-    String booking_id, from_, to_, date_, time_, total_price;
+    // Movies json url
+    private static String url = null;
+    private ProgressDialog pDialog;
+    private List<VDetails> vdetailsList = new ArrayList<VDetails>();
+    private ListView listView;
+    private CustomListAdapter adapter;
+//    Button apl_btn_sell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_booking);
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                .detectAll()
-                .penaltyLog()
-                .penaltyDialog()
-                .build());
+        setContentView(R.layout.view_booking_list);
+        listView = (ListView) findViewById(R.id.list);
 
-        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
-                .penaltyLog()
-                .build());
-        vb_bookingid = (TextView) findViewById(R.id.vb_bookingid);
-        vb_from = (TextView) findViewById(R.id.vb_from);
-        vb_to = (TextView) findViewById(R.id.vb_to);
-        vb_date = (TextView) findViewById(R.id.vb_date);
-        vb_time = (TextView) findViewById(R.id.vb_time);
-        vb_total = (TextView) findViewById(R.id.vb_total);
-        JSONObject json = null;
-        String str = "";
-        HttpResponse response;
-        HttpClient myClient = new DefaultHttpClient();
-        HttpPost myConnection = new HttpPost("http://www.htlabs.in/student/taxibooking/view.php");
-        try {
-            response = myClient.execute(myConnection);
-            str = EntityUtils.toString(response.getEntity(), "UTF-8");
+//        apl_btn_sell=(Button)findViewById(R.id.apl_bt_sell);
+//        apl_btn_sell.setOnClickListener(this);
 
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        adapter = new CustomListAdapter(this, vdetailsList);
 
+        url = "http://www.htlabs.in/student/taxibooking/viewbooking.php"+"?user_id=1";
 
-        try {
-            JSONArray jArray = new JSONArray(str);
-            json = jArray.getJSONObject(0);
-            vb_bookingid.setText(json.getString("bokking_id"));
-            vb_from.setText(json.getString("from_"));
-            vb_to.setText(json.getString("to_"));
-            vb_date.setText(json.getString("date_"));
-            vb_time.setText(json.getString("time_"));
-            vb_total.setText(json.getString("total_price"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        listView.setAdapter(adapter);
 
-    }
+        pDialog = new ProgressDialog(this);
+        // Showing progress dialog before making http request
+        pDialog.setMessage("Loading...");
+        pDialog.show();
+        // Creating volley request obj
+        JsonArrayRequest prodReq = new JsonArrayRequest(url,new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                Log.d(TAG, response.toString());
+                hidePDialog();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+                // Parsing json
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+
+                        JSONObject obj = response.getJSONObject(i);
+                        JSONArray pArray = obj.getJSONArray("posts");
+
+                        for (int j = 0; j < pArray.length(); j++) {
+
+                            String bid= pArray.getJSONObject(j).getString("booking_id");
+                            VDetails item = new VDetails();
+                            item.setBdetails(bid);
+
+                            // adding movie to movies array
+                            vdetailsList.add(item);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                // notifying list adapter about data changes
+                // so that it renders the list view with updated data
+                adapter.notifyDataSetChanged();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
+            }
+        });
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(prodReq);
     }
 
     @Override
     public void onClick(View v) {
+/*        switch(v.getId()){
+            case R.id.apl_bt_sell:
+                Intent i=new Intent(ProductListActivity.this,LoginActivity.class);
+                startActivity(i);
+                break;
+        }  */
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        hidePDialog();
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
     }
 }
-

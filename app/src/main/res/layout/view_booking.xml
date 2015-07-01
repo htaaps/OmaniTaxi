@@ -20,16 +20,7 @@
             android:textStyle="bold"
             android:layout_gravity="center"/>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="48dp"
-            android:gravity="right"
-            android:orientation="horizontal" >
-
-
-
-        </LinearLayout>
-    </LinearLayout>
+     </LinearLayout>
     <LinearLayout android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginLeft="16dp"
@@ -40,55 +31,11 @@
         android:background="@drawable/greybackground"
         android:weightSum="1">
         <TextView
+            android:id="@+id/vb_tv_bdetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text=" Your Booking :"
             android:layout_marginTop="20dp"
             android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/vb_bookingid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/vb_from"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/vb_to"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/vb_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/vb_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/vb_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
-
-</LinearLayout>
+    </LinearLayout>
 </LinearLayout>
