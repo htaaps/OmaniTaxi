@@ -39,7 +39,7 @@ import in.htlabs.suaad.balqees.omanitaxi.model.VDetails;
 /**
  * Created by admin on 5/26/2015.
  */
-public class ViewBooking extends Activity implements View.OnClickListener {
+public class ViewBooking extends Activity {
     // Log tag
     private static final String TAG = ViewBooking.class.getSimpleName();
 
@@ -49,16 +49,12 @@ public class ViewBooking extends Activity implements View.OnClickListener {
     private List<VDetails> vdetailsList = new ArrayList<VDetails>();
     private ListView listView;
     private CustomListAdapter adapter;
-//    Button apl_btn_sell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_booking_list);
         listView = (ListView) findViewById(R.id.list);
-
-//        apl_btn_sell=(Button)findViewById(R.id.apl_bt_sell);
-//        apl_btn_sell.setOnClickListener(this);
 
         adapter = new CustomListAdapter(this, vdetailsList);
 
@@ -111,16 +107,6 @@ public class ViewBooking extends Activity implements View.OnClickListener {
 
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(prodReq);
-    }
-
-    @Override
-    public void onClick(View v) {
-/*        switch(v.getId()){
-            case R.id.apl_bt_sell:
-                Intent i=new Intent(ProductListActivity.this,LoginActivity.class);
-                startActivity(i);
-                break;
-        }  */
     }
 
     @Override
