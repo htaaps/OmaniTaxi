@@ -82,7 +82,8 @@ public class ViewBooking extends Activity {
 
                         for (int j = 0; j < pArray.length(); j++) {
 
-                            String bid= pArray.getJSONObject(j).getString("booking_id");
+                            String bid= pArray.getJSONObject(j).getString("booking_id")+"from "+pArray.getJSONObject(j).getString("from_place")
+                                    +"to "+pArray.getJSONObject(j).getString("to_place");
                             VDetails item = new VDetails();
                             item.setBdetails(bid);
 

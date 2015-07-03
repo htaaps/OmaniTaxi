@@ -34,8 +34,7 @@
             android:id="@+id/vb_tv_bdetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

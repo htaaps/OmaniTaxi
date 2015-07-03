@@ -5,17 +5,27 @@ package in.htlabs.suaad.balqees.omanitaxi;
  */
 public class Taxi {
 
-    private String taxi_id,driver_name,type,price_per_km,lat,lon;
+    private String taxi_id,driver_name,type,price_per_km,lat,lon,d_gsm;
     public Taxi(){
     }
 
-    public Taxi(String taxi_id, String driver_name, String type, String price_per_km, String lat, String lon){
+    public Taxi(String taxi_id, String driver_name, String type, String price_per_km, String lat, String lon,String d_gsm){
         this.taxi_id=taxi_id;
         this.driver_name=driver_name;
         this.type=type;
         this.price_per_km=price_per_km;
         this.lat=lat;
         this.lon=lon;
+        this.d_gsm=d_gsm;
+    }
+
+
+    public String getDgsm() {
+        return d_gsm;
+    }
+
+    public void setDgsm(String d_gsm) {
+        this.d_gsm = d_gsm;
     }
 
     public String getTId() {

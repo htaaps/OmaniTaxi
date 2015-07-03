@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +38,7 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
     private static int selection=0;
     public static String taxiId=null;
     public static String pricePerKm=null;
+    public static String d_gsm=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,60 +95,70 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
         if (marker.equals(mIbra[0])){
             this.taxiId=taxiList.get(0).getTId();
             this.pricePerKm=taxiList.get(0).getTPrice();
+            this.d_gsm=taxiList.get(0).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[1])){
             this.taxiId=taxiList.get(1).getTId();
             this.pricePerKm=taxiList.get(1).getTPrice();
+            this.d_gsm=taxiList.get(1).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[2])){
             this.taxiId=taxiList.get(2).getTId();
             this.pricePerKm=taxiList.get(2).getTPrice();
+            this.d_gsm=taxiList.get(2).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[3])){
             this.taxiId=taxiList.get(3).getTId();
             this.pricePerKm=taxiList.get(3).getTPrice();
+            this.d_gsm=taxiList.get(3).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[4])){
             this.taxiId=taxiList.get(4).getTId();
             this.pricePerKm=taxiList.get(4).getTPrice();
+            this.d_gsm=taxiList.get(4).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[5])){
             this.taxiId=taxiList.get(5).getTId();
             this.pricePerKm=taxiList.get(5).getTPrice();
+            this.d_gsm=taxiList.get(5).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[6])){
             this.taxiId=taxiList.get(6).getTId();
             this.pricePerKm=taxiList.get(6).getTPrice();
+            this.d_gsm=taxiList.get(6).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[7])){
             this.taxiId=taxiList.get(7).getTId();
             this.pricePerKm=taxiList.get(7).getTPrice();
+            this.d_gsm=taxiList.get(7).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[8])){
             this.taxiId=taxiList.get(8).getTId();
             this.pricePerKm=taxiList.get(8).getTPrice();
+            this.d_gsm=taxiList.get(8).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
         else if (marker.equals(mIbra[9])){
             this.taxiId=taxiList.get(9).getTId();
             this.pricePerKm=taxiList.get(9).getTPrice();
+            this.d_gsm=taxiList.get(9).getDgsm();
             i=new Intent(AvailableTaxi.this, TaxiBooking.class);
             startActivity(i);
         }
@@ -193,7 +205,7 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
             try {
                 // Building Parameters
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-
+                params.add(new BasicNameValuePair("city_id", ""+MapsActivity.selection));
                 Log.d("request!", "starting");
                 // getting product details by making HTTP request
                 JSONObject json = jsonParser.makeHttpRequest(LOC_URL, "POST", params);
@@ -216,6 +228,7 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
                         c.setTPrice(obj.getString("price_per_km"));
                         c.setTLat(obj.getString("lat"));
                         c.setTLon(obj.getString("lon"));
+                        c.setDgsm(obj.getString("driver_gsm"));
 
                         taxiList.add(c);
                     }

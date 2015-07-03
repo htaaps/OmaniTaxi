@@ -47,7 +47,7 @@
             />
 
         <EditText
-            android:id="@+id/su_et_email"
+            android:id="@+id/cb_ed_booking"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:hint="Enter booking id"

@@ -33,7 +33,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
     public static final double SLAT=23.6000;
     public static final double SLON=58.5500;
     private Intent i;
-    private static int selection=0;
+    public static int selection=0;
 
 
     @Override

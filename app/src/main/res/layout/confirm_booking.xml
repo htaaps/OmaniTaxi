@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
     <TableLayout android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginLeft="16dp"
@@ -10,127 +10,169 @@
         android:orientation="vertical"
         android:background="@drawable/greybackground"
         android:weightSum="1">
-        <TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textSize="29sp"
                 android:text="Booking Details"
                 android:textColor="#FF4444"
                 android:layout_marginTop="1dp"
                 android:textStyle="bold" />
         </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
                 android:textSize="25sp"
-                android:hint="From"
+                android:text="From"
                 android:layout_marginTop="15dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/cb_tv_from"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
                 android:textSize="25sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold" />
         </TableRow>
-        <TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textSize="25sp"
                 android:layout_marginBottom="10dp"
-                android:hint="To"
+                android:text="To"
                 android:layout_marginTop="15dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/cb_tv_to"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
                 android:textSize="25sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:textStyle="bold" />
         </TableRow>
-        <TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textSize="25sp"
                 android:inputType="date"
                 android:text="Date"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />
-            <DatePicker
-                android:id="@+id/cb_dp_date"
-                android:layout_marginTop="10dp"
-                android:layout_width="200dp"
-                android:layout_height="50dp">
-            </DatePicker>
-        </TableRow>
-        <TableRow>
-
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cb_tv_date"
+                android:hint="Choose Date"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+            </TextView>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textSize="25sp"
                 android:text="Time"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />
-            <TimePicker
-                android:id="@+id/cb_tp_time"
-                android:layout_marginTop="10dp"
-                android:layout_width="200dp"
-                android:layout_height="50dp">
-            </TimePicker>
-        </TableRow>
-        <TableRow>
-
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cb_tv_time"
+                android:hint="Choose Time"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+            </TextView>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textSize="25sp"
                 android:hint="Total Price:"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/cb_tv_tprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
                 android:textSize="25sp"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold" />
         </TableRow>
-        <TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textSize="25sp"
                 android:hint="Total Distance:"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/cb_tv_tdistance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
                 android:textSize="25sp"
                 android:layout_marginTop="20dp"
                 android:textStyle="bold" />
         </TableRow>
-        <Button
-            android:id="@+id/cb_btn_confirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm"
-            android:layout_marginTop="20dp"
-            android:background="#3399FF"
-            android:textColor="#fff"
-            android:textStyle="bold|italic"
-            android:textSize="28sp"
-            android:layout_gravity="right|center_horizontal" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/cb_btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Confirm"
+                android:layout_marginTop="20dp"
+                android:background="#3399FF"
+                android:textColor="#fff"
+                android:textStyle="bold|italic"
+                android:textSize="28sp"
+                android:layout_gravity="right|center_horizontal" />
+        </TableRow>
     </TableLayout>
-
 </LinearLayout>
