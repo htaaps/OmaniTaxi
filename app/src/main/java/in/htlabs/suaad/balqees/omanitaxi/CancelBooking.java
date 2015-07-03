@@ -65,7 +65,7 @@ public class CancelBooking extends Activity implements View.OnClickListener{
 
         adapter = new CancelListAdapter(this, vdetailsList);
 
-        url = "http://www.htlabs.in/student/taxibooking/viewbooking.php"+"?user_id=1";
+        url ="http://www.htlabs.in/student/taxibooking/viewbooking.php"+"?user_id="+UserLogin.user;
 
         listView.setAdapter(adapter);
 
@@ -89,7 +89,9 @@ public class CancelBooking extends Activity implements View.OnClickListener{
 
                         for (int j = 0; j < pArray.length(); j++) {
 
-                            String bid= pArray.getJSONObject(j).getString("booking_id");
+                            String bid= pArray.getJSONObject(j).getString("booking_id")+"from "+pArray.getJSONObject(j).getString("from_place")
+                                    +"to "+pArray.getJSONObject(j).getString("to_place");
+
                             VDetails item = new VDetails();
                             item.setBdetails(bid);
 

@@ -48,19 +48,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oman Taxi App
+            android:text="Omani Taxi App
 "
             android:textColor="#FF4444"
             android:textSize="30sp"/>
 
 
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This Project Done by:
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This Project Done by:
 "
-        android:textColor="#000"
-        android:textSize="30sp"/>
+            android:textColor="#000"
+            android:textSize="30sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,4 +85,4 @@
             android:textSize="25sp"/>
 
     </LinearLayout>
-</LinearLayout>
+</LinearLayout> 

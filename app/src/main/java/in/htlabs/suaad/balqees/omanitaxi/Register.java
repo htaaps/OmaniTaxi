@@ -3,6 +3,7 @@ package in.htlabs.suaad.balqees.omanitaxi;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ import static android.widget.AdapterView.OnItemSelectedListener;
 import static android.widget.AdapterView.OnTouchListener;
 
 
-public class Register extends Activity implements OnClickListener,OnTouchListener {
+public class Register extends Activity implements OnTouchListener {
 
     Button su_btn_submit;
     EditText su_et_username, su_et_pwd, su_et_fname, su_et_lname, su_et_email, su_et_mobile;
@@ -67,7 +68,6 @@ public class Register extends Activity implements OnClickListener,OnTouchListene
         su_et_email = (EditText) findViewById(R.id.su_et_email);
         su_et_mobile = (EditText) findViewById(R.id.su_et_mobile);
         su_btn_submit.setOnTouchListener(this);
-        su_btn_submit.setOnClickListener(this);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, scity);
         ArrayAdapter<String> adapterr = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sgender);
@@ -120,14 +120,6 @@ public class Register extends Activity implements OnClickListener,OnTouchListene
                 break;
         }
         return false;
-    }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.su_btn_submit:
-                new RegisterUser().execute();
-                break;
-        }
     }
     public boolean checkInput() {
         //username = su_et_username.getText().toString().toLowerCase();
@@ -237,6 +229,9 @@ public class Register extends Activity implements OnClickListener,OnTouchListene
                     if (file_url != null) {
                         Toast.makeText(Register.this, file_url, Toast.LENGTH_LONG).show();
                     }
+                    Intent i = new Intent(Register.this,UserLogin.class);
+                    startActivity(i);
+                    finish();
                 }
             }
 

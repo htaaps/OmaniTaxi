@@ -87,6 +87,7 @@ public class AvailableTaxi extends FragmentActivity implements GoogleMap.OnMarke
     protected void onPause() {
         super.onPause();
         mMap=null;
+        finish();
     }
 
     @Override

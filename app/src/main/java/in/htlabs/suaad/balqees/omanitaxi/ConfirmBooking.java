@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -181,6 +182,15 @@ public class ConfirmBooking extends Activity implements View.OnClickListener {
             if (file_url != null) {
                 Toast.makeText(ConfirmBooking.this, file_url, Toast.LENGTH_LONG).show();
             }
+            Intent i = new Intent(ConfirmBooking.this,Booking.class);
+            startActivity(i);
+            finish();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

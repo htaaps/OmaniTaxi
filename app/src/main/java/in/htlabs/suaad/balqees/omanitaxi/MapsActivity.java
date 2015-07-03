@@ -46,8 +46,9 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
 
     @Override
     protected void onPause() {
-        super.onResume();
+        super.onPause();
         mMap=null;
+        finish();
     }
 
     private void setUpMapIfNeeded() {
